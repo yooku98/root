@@ -430,8 +430,6 @@ main.wrap {
 html.lightbox-open,
 html.lightbox-open body { overflow: hidden; }
 
-.lookbook-grid img { cursor: zoom-in; }
-
 .lightbox-overlay {
   position: fixed;
   inset: 0;
@@ -593,13 +591,29 @@ html.lightbox-open body { overflow: hidden; }
   column-gap: 12px;
 }
 
-.lookbook-grid img {
+.lookbook-item {
+  position: relative;
+  display: block;
+  margin: 0 0 12px;
+  break-inside: avoid;
+  cursor: zoom-in;
+  background: var(--color-surface);
+}
+
+.lookbook-item img {
   display: block;
   width: 100%;
   height: auto;
-  margin: 0 0 12px;
-  break-inside: avoid;
-  background: var(--color-surface);
+}
+
+.lookbook-closing {
+  max-width: 420px;
+  margin: 40px auto 0;
+  border: 1px solid var(--color-line);
+}
+
+.lookbook-item img[hidden] {
+  display: none;
 }
 
 @media (min-width: 700px) {
@@ -608,7 +622,7 @@ html.lightbox-open body { overflow: hidden; }
 
 @media (min-width: 1000px) {
   .lookbook-grid { column-count: 4; column-gap: 16px; }
-  .lookbook-grid img { margin-bottom: 16px; }
+  .lookbook-item { margin-bottom: 16px; }
 }
 
 /* ---------- collection intro ---------- */

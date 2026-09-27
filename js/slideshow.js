@@ -76,8 +76,8 @@
     if (e.target === overlay) close();
   });
 
-  // Design cards: every <img> inside .design-photo is one angle of that design.
-  document.querySelectorAll('.design-photo').forEach(function (photoEl) {
+  // Design cards + Lookbook tiles: every <img> inside is one angle of that item.
+  document.querySelectorAll('.design-photo, .lookbook-item').forEach(function (photoEl) {
     var imgs = Array.prototype.slice.call(photoEl.querySelectorAll('img'));
     if (!imgs.length) return;
     var slideList = imgs.map(function (img) {
@@ -93,7 +93,7 @@
 
     photoEl.setAttribute('role', 'button');
     photoEl.setAttribute('tabindex', '0');
-    photoEl.setAttribute('aria-label', 'View photos of this design');
+    photoEl.setAttribute('aria-label', slideList.length > 1 ? 'View photos' : 'View photo');
 
     function activate() { open(slideList, 0); }
     photoEl.addEventListener('click', activate);
@@ -104,15 +104,4 @@
       }
     });
   });
-
-  // Lookbook grid: click any photo to browse the whole set from that point.
-  var lookbookImgs = Array.prototype.slice.call(document.querySelectorAll('.lookbook-grid img'));
-  if (lookbookImgs.length) {
-    var lookbookSlides = lookbookImgs.map(function (img) {
-      return { src: fullSrc(img), alt: img.alt };
-    });
-    lookbookImgs.forEach(function (img, i) {
-      img.addEventListener('click', function () { open(lookbookSlides, i); });
-    });
-  }
 })();

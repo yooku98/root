@@ -21,9 +21,12 @@ images/olesie/              Web-sized photos (WebP, 600w + 1200w each)
                             cover file.
   gallery/highlights|new/   115 shoot photos total: 81 are grouped into the 21 design
                             cards' slideshows (13 as extra angles for designs 1-6, 68
-                            as the sole source for designs 7-21), the other 34 (mostly
-                            behind-the-scenes rack shots, plus the whole gallery/new/
-                            folder) fill the Lookbook grid
+                            as the sole source for designs 7-21). Of the remaining 34,
+                            11 are grouped into their own Lookbook slideshow tiles (same
+                            rule as the designs — same look, different angles), 9 are
+                            behind-the-scenes/rack shots or group ensemble photos shown
+                            singly, and 1 (BBB_0028) is pulled out as the standalone
+                            closing image at the end of the page.
 images/brand/               Logo assets derived from the brand-mark JPEG (transparent
                             wordmark + full logo PNGs, favicon, apple-touch icon, 1200x630 share image)
 ```
@@ -76,8 +79,15 @@ describes the current photo; update it if you swap.
 
 The homepage collection-card banner has empty `alt` on purpose (decorative;
 the card's name/tagline carry the meaning); the hero photo has a real `alt`
-since it's the only image on the page. The Lookbook images have generic
-numbered `alt` text; replace it with real descriptions if you can. The first
+since it's the only image on the page. The Lookbook is a masonry grid of
+`<div class="lookbook-item">` tiles — same pattern as `.design-photo`: every
+`<img>` inside one tile is an angle of the same look, with the first visible
+and the rest `hidden`, and clicking opens that tile's own slideshow. Add
+another angle to an existing tile the same way you would for a design card;
+add a new tile (one visible `<img>`, no `hidden` siblings) for a fresh look.
+Note: CSS multi-column layout doesn't preserve DOM order visually, so a tile
+meant to read as "last" (like the closing shot) needs to live outside
+`.lookbook-grid` — see `.lookbook-closing` for that pattern. The first
 design card is styled as the featured piece (`design-card--featured`); move
 that class to another card to feature a different one.
 
