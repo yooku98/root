@@ -582,8 +582,15 @@ html.lightbox-open body { overflow: hidden; }
 /* ---------- collection intro ---------- */
 
 .collection-intro {
-  padding: 64px 0 16px;
+  padding: 56px 0 64px;
   border-bottom: 1px solid var(--color-line);
+}
+
+.collection-intro .wrap {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 48px;
+  align-items: center;
 }
 
 .collection-intro .eyebrow {
@@ -609,11 +616,29 @@ html.lightbox-open body { overflow: hidden; }
   display: flex;
   gap: 28px;
   margin-top: 28px;
-  padding-bottom: 40px;
   font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-brand);
+}
+
+.collection-headline {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 1px solid var(--color-line);
+  background: var(--color-surface);
+}
+
+.collection-headline img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 860px) {
+  .collection-intro .wrap { grid-template-columns: 1fr; gap: 28px; }
+  .collection-headline { order: -1; aspect-ratio: 16 / 10; }
 }
 
 /* ---------- utilities ---------- */
