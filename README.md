@@ -10,12 +10,15 @@ static host (Netlify, GitHub Pages, S3, etc.).
 index.html                  Homepage: split hero + collections grid
 collections/olesie.html     Olesie collection: design grid (photo, write-up, price)
 css/style.css               All styling and theme tokens (colors/fonts at the top)
+js/slideshow.js             Click-to-open photo viewer for design cards + the Lookbook
 images/olesie/              Web-sized photos (WebP, 600w + 1200w each)
   cover-*.webp              Original Pixieset cover shot — used as the homepage hero photo
   banner-*.webp             Homepage Olesie collection-card photo
   hero-*.webp               Not currently referenced (was the old full-bleed hero); safe to delete or repurpose
-  design-01..06-*.webp      The six design cards on the collection page
-  gallery/highlights|new/   Remaining shoot photos, shown in the Lookbook on the collection page
+  design-01..06-*.webp      The six design cards' main photos; each card also pulls 1-6
+                            extra angles from gallery/highlights/ (see below)
+  gallery/highlights|new/   Remaining shoot photos: 13 are reused as extra design angles,
+                            the other 102 fill the Lookbook grid
 images/brand/               Logo assets derived from the brand-mark JPEG (transparent
                             wordmark + full logo PNGs, favicon, apple-touch icon, 1200x630 share image)
 ```
@@ -34,6 +37,15 @@ Everything wrapped in `[placeholder]` needs replacing:
   `<article class="design-card">`. Each has a photo, a name, a write-up paragraph,
   a price, and up to two tags (e.g. fabric or category). Copy/paste the
   block to add more designs, delete blocks you don't need.
+- **Design photos are a slideshow** — every `<img>` inside a `.design-photo`
+  div is one angle of that design; clicking the photo opens a full-screen
+  viewer cycling through all of them (arrow keys / on-screen arrows, Esc to
+  close). To add another angle, add another `<img ... hidden>` inside the
+  same `.design-photo` div (see `js/slideshow.js` — it reads every `<img>`
+  in the block, the `hidden` attribute just keeps the extra ones out of the
+  card's own layout). A "N photos" badge appears automatically once a
+  design has more than one image; single-photo designs still open in the
+  viewer, just without arrows.
 - **Footer** — the short brand blurb, email (currently a placeholder
   `mailto:` link — replace the address), Instagram handle, and studio note,
   in both pages. Each design card has an "Inquire" link to the footer
