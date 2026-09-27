@@ -15,10 +15,15 @@ images/olesie/              Web-sized photos (WebP, 600w + 1200w each)
   cover-*.webp              Original Pixieset cover shot — used as the homepage hero photo
   banner-*.webp             Homepage Olesie collection-card photo
   hero-*.webp               Not currently referenced (was the old full-bleed hero); safe to delete or repurpose
-  design-01..06-*.webp      The six design cards' main photos; each card also pulls 1-6
-                            extra angles from gallery/highlights/ (see below)
-  gallery/highlights|new/   Remaining shoot photos: 13 are reused as extra design angles,
-                            the other 102 fill the Lookbook grid
+  design-01..06-*.webp      The first 6 design cards' main photos; each also pulls 1-6
+                            extra angles from gallery/highlights/ (see below). Designs
+                            07-21 use gallery/highlights/ photos directly, no dedicated
+                            cover file.
+  gallery/highlights|new/   115 shoot photos total: 81 are grouped into the 21 design
+                            cards' slideshows (13 as extra angles for designs 1-6, 68
+                            as the sole source for designs 7-21), the other 34 (mostly
+                            behind-the-scenes rack shots, plus the whole gallery/new/
+                            folder) fill the Lookbook grid
 images/brand/               Logo assets derived from the brand-mark JPEG (transparent
                             wordmark + full logo PNGs, favicon, apple-touch icon, 1200x630 share image)
 ```
@@ -33,7 +38,7 @@ Everything wrapped in `[placeholder]` needs replacing:
   price teaser under the Olesie card.
 - **Collection intro** (`collections/olesie.html`) — what ties the Olesie
   designs together, season/year.
-- **Per-design block** — repeated 6x in `collections/olesie.html` as
+- **Per-design block** — repeated 21x in `collections/olesie.html` as
   `<article class="design-card">`. Each has a photo, a name, a write-up paragraph,
   a price, and up to two tags (e.g. fabric or category). Copy/paste the
   block to add more designs, delete blocks you don't need.
@@ -51,8 +56,11 @@ Everything wrapped in `[placeholder]` needs replacing:
   in both pages. Each design card has an "Inquire" link to the footer
   (`#contact`); once you have a real email, the footer's `mailto:` link
   covers it.
-- **"6 designs"** in the collection intro is hardcoded; update it if you
+- **"21 designs"** in the collection intro is hardcoded; update it if you
   add or remove cards.
+- **Some designs group several distinct pieces from the same shoot day**
+  (e.g. a "two-piece set" card) rather than one exact SKU — check the
+  write-up against the actual product before publishing pricing.
 
 ## Photos
 
