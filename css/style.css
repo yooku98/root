@@ -380,6 +380,10 @@ a { color: inherit; text-decoration: none; }
   display: block;
 }
 
+.design-photo img[hidden] {
+  display: none;
+}
+
 .photo-count {
   position: absolute;
   right: 10px;
