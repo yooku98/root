@@ -670,7 +670,7 @@ html.lightbox-open body { overflow: hidden; }
 
 @media (max-width: 860px) {
   .collection-intro .wrap { grid-template-columns: 1fr; gap: 28px; }
-  .collection-headline { order: -1; aspect-ratio: 16 / 10; }
+  .collection-headline { order: -1; }
 }
 
 /* ---------- utilities ---------- */
