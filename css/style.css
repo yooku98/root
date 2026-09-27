@@ -259,10 +259,10 @@ a { color: inherit; text-decoration: none; }
 .section-head h2::before {
   content: "";
   display: block;
-  width: 48px;
-  height: 3px;
-  margin-bottom: 14px;
-  background: var(--gradient-brand);
+  width: 40px;
+  height: 24px;
+  margin-bottom: 10px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 24'%3E%3Cpath d='M20 0 V6 C14 8 11 13 8 22 M20 6 C20 12 20 17 20 24 M20 6 C26 8 29 13 32 22' fill='none' stroke='%23985f28' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center / contain;
 }
 
 .section-head .section-note {
@@ -290,6 +290,27 @@ a { color: inherit; text-decoration: none; }
 .section-head--center .section-note { max-width: 52ch; }
 
 /* ---------- collections grid (homepage) ---------- */
+
+main.wrap {
+  position: relative;
+}
+
+.collections-decor {
+  position: absolute;
+  top: 24px;
+  right: -20px;
+  width: min(380px, 40%);
+  height: auto;
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section-head,
+.collections-grid {
+  position: relative;
+  z-index: 1;
+}
 
 .collections-grid {
   display: flex;
@@ -681,11 +702,31 @@ html.lightbox-open body { overflow: hidden; }
 /* ---------- footer ---------- */
 
 .site-footer {
+  position: relative;
+  overflow: hidden;
   background: var(--color-brand-dark);
   color: var(--color-on-deep);
   font-size: 14px;
   border-top: 4px solid;
   border-image: var(--gradient-brand) 1;
+}
+
+.footer-roots-decor {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(900px, 140%);
+  height: auto;
+  opacity: 0.1;
+  filter: brightness(0) invert(1);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.site-footer > .wrap {
+  position: relative;
+  z-index: 1;
 }
 
 .footer-grid {
