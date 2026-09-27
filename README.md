@@ -7,13 +7,13 @@ static host (Netlify, GitHub Pages, S3, etc.).
 ## Structure
 
 ```
-index.html                  Homepage: intro + collections grid
+index.html                  Homepage: split hero + collections grid
 collections/olesie.html     Olesie collection: design grid (photo, write-up, price)
 css/style.css               All styling and theme tokens (colors/fonts at the top)
 images/olesie/              Web-sized photos (WebP, 600w + 1200w each)
-  hero-*.webp               Homepage hero photo
-  banner-*.webp             Homepage Olesie collection banner
-  cover-*.webp              Original Pixieset cover shot (currently unused; handy as a share-preview image)
+  cover-*.webp              Original Pixieset cover shot — used as the homepage hero photo
+  banner-*.webp             Homepage Olesie collection-card photo
+  hero-*.webp               Not currently referenced (was the old full-bleed hero); safe to delete or repurpose
   design-01..06-*.webp      The six design cards on the collection page
   gallery/highlights|new/   Remaining shoot photos, shown in the Lookbook on the collection page
 images/brand/               Logo assets derived from the brand-mark JPEG (transparent
@@ -24,17 +24,21 @@ images/brand/               Logo assets derived from the brand-mark JPEG (transp
 
 Everything wrapped in `[placeholder]` needs replacing:
 
-- **Homepage intro** (`index.html`) — the one-paragraph ROOT statement.
+- **Homepage hero** (`index.html`) — the one-paragraph ROOT statement next
+  to the cover photo.
+- **Homepage collection card** — the one-line tagline and "starting from"
+  price teaser under the Olesie card.
 - **Collection intro** (`collections/olesie.html`) — what ties the Olesie
   designs together, season/year.
 - **Per-design block** — repeated 6x in `collections/olesie.html` as
   `<article class="design-card">`. Each has a photo, a name, a write-up paragraph,
   a price, and up to two tags (e.g. fabric or category). Copy/paste the
   block to add more designs, delete blocks you don't need.
-- **Footer contact info** — email and Instagram handle, in both pages. Each
-  design card has an "Inquire" link to the footer (`#contact`); once you have
-  an email address, change it to a `mailto:` link (and link the footer email
-  the same way) so visitors can enquire about a piece.
+- **Footer** — the short brand blurb, email (currently a placeholder
+  `mailto:` link — replace the address), Instagram handle, and studio note,
+  in both pages. Each design card has an "Inquire" link to the footer
+  (`#contact`); once you have a real email, the footer's `mailto:` link
+  covers it.
 - **"6 designs"** in the collection intro is hardcoded; update it if you
   add or remove cards.
 
@@ -50,8 +54,9 @@ change which look a card shows, point its `src`/`srcset` at another file (for
 example one from `images/olesie/gallery/`). The `alt` text on each card
 describes the current photo; update it if you swap.
 
-The homepage hero and banner have empty `alt` on purpose (decorative; the
-title and card label carry the meaning). The Lookbook images have generic
+The homepage collection-card banner has empty `alt` on purpose (decorative;
+the card's name/tagline carry the meaning); the hero photo has a real `alt`
+since it's the only image on the page. The Lookbook images have generic
 numbered `alt` text; replace it with real descriptions if you can. The first
 design card is styled as the featured piece (`design-card--featured`); move
 that class to another card to feature a different one.
@@ -61,9 +66,11 @@ that class to another card to feature a different one.
 The files in `images/brand/` were derived from a compressed 1280 px JPEG of
 the logo (colors: caramel `#985f28`, chocolate `#4f3013`), so edges are a
 little soft at large sizes. If you get the original vector (SVG/AI/PDF) or a
-transparent PNG, swap it in: keep the filenames, or update the `<img>` tags
-(header wordmark, homepage brand band) and the favicon links in each page's
-`<head>`.
+transparent PNG, swap it in: keep the filenames, or update the header's
+`<img>` tag and the favicon links in each page's `<head>`. The footer uses a
+plain text "ROOT" wordmark (`.footer-logo`) instead of the image, since the
+logo's caramel tone doesn't show up against the footer's dark background —
+swap that for an `<img>` too if you get a light/reversed logo variant.
 
 The Open Graph share tags (`og:image`, `og:url`, `twitter:card`) are left
 commented out in each page's `<head>` because crawlers require absolute

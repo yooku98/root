@@ -36,54 +36,80 @@
       <a href="collections/olesie.html">Collections</a>
       <a href="#contact">Contact</a>
     </nav>
+    <div class="header-cta">
+      <a class="btn btn-primary btn-sm" href="collections/olesie.html">View Collections</a>
+    </div>
   </div>
 </header>
 
-<section class="hero hero--photo">
-  <img class="hero-img" src="images/olesie/hero-2000.webp" srcset="images/olesie/hero-1000.webp 1000w, images/olesie/hero-2000.webp 2000w" sizes="100vw" width="2000" height="1314" alt="" fetchpriority="high" decoding="async">
-  <div class="hero-shade"></div>
-  <div class="wrap hero-copy">
-    <span class="eyebrow">Rooted in heritage</span>
-    <h1>ROOT</h1>
-  </div>
-</section>
-
-<section class="statement">
+<section class="hero-split">
   <div class="wrap">
-    <p>[placeholder — one or two sentences on ROOT as a designer/studio: the point of view, the materials or techniques you favor, who the work is for. Replace this with your own words.]</p>
-  </div>
-</section>
-
-<section class="brand-band">
-  <div class="wrap">
-    <img src="images/brand/logo-ink.png" width="768" height="1078" alt="ROOT — Rooted in heritage" loading="lazy" decoding="async">
+    <div class="hero-copy-col">
+      <span class="eyebrow">Rooted in heritage</span>
+      <h1>ROOT</h1>
+      <p>[placeholder — one or two sentences on ROOT as a designer/studio: the point of view, the materials or techniques you favor, who the work is for. Replace this with your own words.]</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="collections/olesie.html">Explore the Collection</a>
+        <a class="btn btn-outline" href="#contact">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero-photo-col">
+      <img src="images/olesie/cover-1200.webp" srcset="images/olesie/cover-600.webp 600w, images/olesie/cover-1200.webp 1200w" sizes="(min-width: 860px) 50vw, 100vw" width="1600" height="2405" alt="Olesie collection — cover photograph" fetchpriority="high" decoding="async">
+    </div>
   </div>
 </section>
 
 <main class="wrap">
-  <div class="section-head">
-    <h2 id="collections">Collections</h2>
-    <p class="section-note">Work is grouped by collection.</p>
+  <div class="section-head section-head--center">
+    <span class="eyebrow">Portfolio</span>
+    <h2 id="collections">Collections, Not a Catalogue</h2>
+    <p class="section-note">Work is grouped by collection. Olesie is live now — more collections will appear here as they're added.</p>
   </div>
 
   <div class="collections-grid">
-    <a class="collection-card collection-card--wide" href="collections/olesie.html">
-      <img src="images/olesie/banner-1600.webp" srcset="images/olesie/banner-800.webp 800w, images/olesie/banner-1600.webp 1600w" sizes="(min-width: 1180px) 1130px, 100vw" width="1600" height="1064" alt="" loading="lazy" decoding="async">
-      <span class="card-label">
+    <a class="collection-card" href="collections/olesie.html">
+      <span class="card-photo">
+        <img src="images/olesie/banner-1600.webp" srcset="images/olesie/banner-800.webp 800w, images/olesie/banner-1600.webp 1600w" sizes="(min-width: 700px) 320px, 100vw" width="1600" height="1064" alt="" loading="lazy" decoding="async">
+      </span>
+      <span class="card-body">
         <span class="name">Olesie</span>
-        <span class="meta">View collection</span>
+        <span class="tagline">[placeholder — one line describing the collection's mood or story]</span>
+        <span class="starting-from">[starting from $ placeholder]</span>
       </span>
     </a>
-
   </div>
 </main>
 
 <footer class="site-footer" id="contact">
-  <div class="wrap">
-    <span>ROOT — [placeholder: city / studio note]</span>
-    <span>[placeholder: email address] · [placeholder: Instagram handle]</span>
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <span class="footer-logo">ROOT</span>
+      <p>[placeholder — one short line about ROOT for the footer, e.g. studio location or mission.]</p>
+    </div>
+    <div class="footer-col">
+      <span class="footer-heading">Explore</span>
+      <nav class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="collections/olesie.html">Collections</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <div class="footer-col">
+      <span class="footer-heading">Get in Touch</span>
+      <div class="footer-links">
+        <a href="mailto:placeholder@example.com">[placeholder: email address]</a>
+        <a href="#">[placeholder: Instagram handle]</a>
+        <span class="footer-muted">[placeholder: city / studio note]</span>
+      </div>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>&copy; <span id="year"></span> ROOT. All rights reserved.</span>
+    <span>Rooted in heritage</span>
   </div>
 </footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 
 </body>
 </html>
