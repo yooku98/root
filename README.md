@@ -4,6 +4,8 @@ Static HTML/CSS portfolio, structured by collection. No build step —
 open `index.html` directly in a browser, or serve the folder with any
 static host (Netlify, GitHub Pages, S3, etc.).
 
+**Live site:** https://yooku98.github.io/root/
+
 ## Structure
 
 ```
